@@ -44,6 +44,7 @@ const Player = (props) => {
     <div className='c-player'>
       <audio src={props.songs[props.currentSongIndex].src} ref={audioEl}></audio>
       <h4>Playing now</h4>
+      {isPlaying ? <span className="now-playing">Now Playing</span> : ""}
       <div className='c-player--container'>
         <PlayerDetails
           isPlaying={isPlaying}
@@ -53,6 +54,7 @@ const Player = (props) => {
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
           skipSong={skipSong}
+          onChange={() => props.setIsPlaying(isPlaying)}
         />
         <div className='c-player--cover'><p className="c-player--next"><strong>Next up:</strong> {props.songs[props.nextSongIndex].title} by {props.songs[props.nextSongIndex].artist}</p></div>
       </div>

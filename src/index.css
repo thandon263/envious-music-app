@@ -53,7 +53,6 @@ body {
   border-top-right-radius: 50px;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-  overflow-x: hidden;
 }
 
 .c-player--details .details-img {
@@ -91,6 +90,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
   margin-bottom: 30px;
 }
 
@@ -98,7 +98,8 @@ body {
   display: flex;
   height: 60px;
   width: 60px;
-  line-height: 60px;
+  align-items: center;
+  justify-content: center;
   margin: 0 30px;
   padding: 20px;
   border-radius: 50%;
@@ -123,16 +124,36 @@ body {
   font-size: 18px;
 }
 
-.c-player .now-playing {
+.now-playing {
   position: relative;
-  left: 10px;
-  top: 90px;
+  left: 70px;
+  top: 140px;
+  float: left;
+  clear: both;
   z-index: 1;
   background-color: #FFF;
   padding: 5px 10px;
   border-radius: 20px;
   font-weight: bold;
   color: #51b9e3;
+}
+
+.progress-bar {
+  grid-area: progressbar;
+  width: 99%;
+  height: 3px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #BABABA;
+}
+
+.progress-bar::-webkit-slider-thumb {
+  background: #51b9e3;
+  height: 6px;
+  width: 6px;
+  box-shadow: -5000px 0 0 5000px #51b9e3;
 }
 
 .c-player .c-player--cover {

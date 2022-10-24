@@ -10,22 +10,22 @@ function App() {
       src: "./music/on-n-on.mp3"
     }, 
     {
-      title: "Song 2",
-      artist: "Artist 2",
-      img_src: "./images/song-2.jpg",
-      src: "./music/somebody-new.mp3"
+      title: "Chill-out Acid Squeeze Mix",
+      artist: "Spy vs. Spy",
+      img_src: "https://i1.sndcdn.com/artworks-gwPCo3ZJkdz5evlr-KGPoPQ-t500x500.jpg",
+      src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
     }, 
     {
-      title: "Song 3",
-      artist: "Artist 3",
-      img_src: "./images/song-3.jpg",
-      src: "./music/on-n-on.mp3"
+      title: "One Last Cry",
+      artist: "Az Yet",
+      img_src: "https://cdn.imusic.am/images/artist/big/17271/1326264817/cover.jpg",
+      src: "./music/One-Last-Cry.mp3"
     },
     {
-      title: "Song 4",
-      artist: "Artist 4",
-      img_src: "./images/song-4.jpg",
-      src: "./music/on-n-on.mp3"
+      title: "Oceans Accapella (Cover)",
+      artist: "Effect Vocal Band",
+      img_src: "https://i0.wp.com/i-ronny.com/wp-content/uploads/2020/12/Effect-Xmas-Carols-2020.jpg?resize=500%2C500&ssl=1",
+      src: "./music/Oceans-Master.mp3"
     }
   ]);
 
@@ -44,7 +44,7 @@ function App() {
 
   return (
     <div className="App">
-      <Player 
+      <Player
         currentSongIndex={currentSongIndex}
         setCurrentSongIndex={setCurrentSongIndex}
         nextSongIndex={nextSongIndex}

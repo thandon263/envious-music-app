@@ -2,7 +2,6 @@
 const PlayerDetails = (props) => {
   return (
     <div className="c-player--details">
-      {props.isPlaying ? <span className="now-playing">Now Playing</span> : ""}
       <div className="details-img">
         <img src={props.song.img_src} alt="" />
       </div>
