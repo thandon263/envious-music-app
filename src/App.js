@@ -32,7 +32,15 @@ function App() {
   let [currentSongIndex, setCurrentSongIndex] = useState(0);
   let [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
 
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 768px)").matches
+  );
+
   useEffect(() => {
+    window
+    .matchMedia("(min-width: 768px)")
+    .addEventListener('change', e => setMatches( e.matches ));
+
     setNextSongIndex(() => {
       if (currentSongIndex + 1 > songs.length - 1) {
         return 0;
@@ -40,16 +48,18 @@ function App() {
         return currentSongIndex + 1;
       }
     });
-  }, [currentSongIndex, songs]);
+
+}, [currentSongIndex, songs]);
 
   return (
     <div className="App">
-      <Player
+     {matches && <Player
         currentSongIndex={currentSongIndex}
         setCurrentSongIndex={setCurrentSongIndex}
         nextSongIndex={nextSongIndex}
         songs={songs}
-      />
+      />}
+      {!matches && <div className="not-supported">Oop! Device not supported yet.</div>}
     </div>
   );
 }
