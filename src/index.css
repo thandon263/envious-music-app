@@ -58,7 +58,7 @@ body {
 .c-player--details .details-img {
   position: relative;
   width: fit-content;
-  margin: 50px auto;
+  margin: 50px 102px;
 }
 
 .c-player--details .details-img img {
@@ -126,7 +126,7 @@ body {
 
 .now-playing {
   position: relative;
-  left: 70px;
+  left: 180px;
   top: 140px;
   float: left;
   clear: both;
@@ -179,4 +179,205 @@ body {
 @keyframes slideshow {
   0%    { left: 100%; }
   100%  { left: -50%; }
+}
+
+@media screen and (max-height: 900px) {
+  .c-player {
+    position: relative;
+    bottom: 60px;
+  }
+  .c-player--container {
+    width: 100%;
+    height: 63vh;
+    padding: 30px;
+  }
+  .c-player--details .details-img {
+    position: relative;
+  }
+  .c-player--details .details-img img {
+    width: 200px;
+  }
+  .now-playing {
+    position: relative;
+    left: 50px;
+    top: 50px;
+  }
+
+  .c-player--details .details-title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .c-player {
+    width: 340px;
+    position: relative;
+    bottom: 50px;
+  }
+  .c-player--container {
+    width: 100%;
+    height: 50vh;
+    padding: 20px;
+  }
+  .c-player--details .details-img {
+    position: relative;
+    width: 300px;
+  }
+  .c-player--details .details-img img {
+    width: 80px;
+    border-radius: 8px;
+    position: relative;
+    bottom: 40px;
+    right: 200px;
+  }
+  .now-playing {
+    position: relative;
+    left: 50px;
+    top: 50px;
+  }
+  .c-player--details {
+    height: 100px;
+  }
+  .c-player--details .details-title {
+    font-size: 20px;
+    overflow-wrap: break-word;
+    position: relative;
+    bottom: 60px;
+  }
+  .c-player--details .details-artist {
+    position: relative;
+    bottom: 60px;
+  }
+
+  .progress-bar {
+   position: relative;
+   top: 50px;
+  }
+
+  .c-player--controls {
+    position: relative;
+    top: 50px;
+  }
+
+  .now-playing {
+    position: relative;
+    left: 150px;
+    top: 50px;
+  }
+  .c-player--cover {
+    position: relative;
+    top: 35px;
+  }
+  .c-player--next {
+    width: 500px;
+  }
+}
+
+@media screen and (min-width: 380px) and (max-width: 399px) {
+  .now-playing {
+    position: relative;
+    left: 180px;
+    top: 50px;
+  }
+  .c-player--cover {
+    position: relative;
+    top: 120px;
+  }
+  .c-player--details .details-img img {
+    width: 120px;
+    border-radius: 20px;
+    position: relative;
+    bottom: 40px;
+    right: 180px;
+  }
+  .progress-bar {
+    position: relative;
+    top: 110px;
+   }
+   .c-player--controls {
+    position: relative;
+    top: 120px;
+  }
+  .c-player--details .details-title {
+    font-size: 24px;
+    overflow-wrap: break-word;
+    position: relative;
+    bottom: 75px;
+  }
+  .c-player--details .details-artist {
+    position: relative;
+    bottom: 80px;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 780px) {
+  .c-player {
+    width: 380px;
+    position: relative;
+    bottom: 50px;
+  }
+  .c-player--container {
+    width: 100%;
+    height: 60vh;
+    padding: 20px;
+  }
+  .c-player--details .details-img {
+    position: relative;
+    width: 400px;
+  }
+  .c-player--details .details-img img {
+    width: 200px;
+    border-radius: 20px;
+    position: relative;
+    bottom: 20px;
+    right: 200px;
+  }
+  .c-player--details {
+    height: 100px;
+  }
+  .c-player--details .details-title {
+    font-size: 24px;
+    overflow-wrap: break-word;
+    position: relative;
+    bottom: 20px;
+  }
+  .c-player--details .details-artist {
+    position: relative;
+    bottom: 20px;
+  }
+
+  .progress-bar {
+   position: relative;
+   top: 220px;
+  }
+
+  .c-player--controls {
+    position: relative;
+    top: 230px;
+  }
+
+  .now-playing {
+    position: relative;
+    left: 230px;
+    top: 70px;
+  }
+  .c-player--cover {
+    position: relative;
+    top: 240px;
+  }
+  .c-player--next {
+    width: 500px;
+  }
+}
+
+@media screen and (min-width: 520px) and (max-width: 640px) {
+  .c-player--container {
+    width: 100%;
+    height: 70vh;
+    padding: 20px;
+  }
+  .c-player--cover {
+    position: relative;
+    top: 210px;
+  }
 }

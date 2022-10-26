@@ -33,12 +33,12 @@ function App() {
   let [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
 
   const [matches, setMatches] = useState(
-    window.matchMedia("(min-width: 768px)").matches
+    window.matchMedia("(min-width: 360px)").matches
   );
 
   useEffect(() => {
     window
-    .matchMedia("(min-width: 768px)")
+    .matchMedia("(min-width: 360px)")
     .addEventListener('change', e => setMatches( e.matches ));
 
     setNextSongIndex(() => {
