@@ -139,21 +139,26 @@ body {
 }
 
 .progress-bar {
-  grid-area: progressbar;
-  width: 99%;
-  height: 3px;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid #BABABA;
+  width: 100%;
 }
 
-.progress-bar::-webkit-slider-thumb {
-  background: #51b9e3;
-  height: 6px;
-  width: 6px;
-  box-shadow: -5000px 0 0 5000px #51b9e3;
+.progress-bar--wrapper {
+  min-width: 100%;
+  background-color: #b8bfcc;
+  height: 3px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.seek-bar{
+  width: 0;
+  height: 100%;
+  background-color: #51b9e3;
+  border-radius: 30px;
+}
+
+.seek-bar::hover {
+  height: 5px;
 }
 
 .c-player .c-player--cover {
@@ -169,4 +174,10 @@ body {
 @keyframes slideshow {
   0%    { left: 100%; }
   100%  { left: -50%; }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
 }

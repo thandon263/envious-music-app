@@ -29,8 +29,8 @@ function App() {
     }
   ]);
 
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
+  let [currentSongIndex, setCurrentSongIndex] = useState(0);
+  let [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
 
   useEffect(() => {
     setNextSongIndex(() => {
@@ -40,7 +40,7 @@ function App() {
         return currentSongIndex + 1;
       }
     });
-  }, [currentSongIndex]);
+  }, [currentSongIndex, songs]);
 
   return (
     <div className="App">

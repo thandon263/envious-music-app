@@ -5,6 +5,7 @@ import PlayerControls from "./PlayerControls";
 const Player = (props) => {
   const audioEl = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  let [currentSong, setCurrentSong] = useState(props.songs[props.currentSongIndex]);
 
   useEffect(() => {
     if (isPlaying) {
@@ -23,7 +24,7 @@ const Player = (props) => {
         if (temp > props.songs.length - 1) {
           temp = 0;
         }
-
+        console.log("Index", temp);
         return temp;
       });
     } else {
@@ -40,9 +41,23 @@ const Player = (props) => {
     }
   }
 
+  const onPlaying = () => {
+    const duration = audioEl.current.duration;
+    const ct = audioEl.current.currentTime;
+    setCurrentSong({...props.songs[props.currentSongIndex], "progress": (ct/duration * 100), "length": duration });
+
+    if (currentSong.progress === 100) {
+      skipSong();
+    }
+  }
+
   return (
     <div className='c-player'>
-      <audio src={props.songs[props.currentSongIndex].src} ref={audioEl}></audio>
+      <audio 
+        src={currentSong.src}
+        onTimeUpdate={onPlaying}
+        ref={audioEl}>
+      </audio>
       <h4>Playing now</h4>
       {isPlaying ? <span className="now-playing">Now Playing</span> : ""}
       <div className='c-player--container'>
@@ -50,11 +65,14 @@ const Player = (props) => {
           isPlaying={isPlaying}
           song={props.songs[props.currentSongIndex]}
         />
-        <PlayerControls 
+        <PlayerControls
+          audioEl={audioEl}
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
           skipSong={skipSong}
-          onChange={() => props.setIsPlaying(isPlaying)}
+          progress={currentSong.progress}
+          currentSong={currentSong}
+          setCurrentSong={setCurrentSong}
         />
         <div className='c-player--cover'><p className="c-player--next"><strong>Next up:</strong> {props.songs[props.nextSongIndex].title} by {props.songs[props.nextSongIndex].artist}</p></div>
       </div>
